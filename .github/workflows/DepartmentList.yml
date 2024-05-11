@@ -1,0 +1,35 @@
+name: Robot Framework Tests API - Department List
+
+on: push
+
+jobs:
+    
+  test:
+    name: Department List
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        pip install robotframework
+        pip install robotframework-requests
+        pip install robotframework-seleniumlibrary
+
+    - name: Run Robot Framework tests API Department List
+      run: |
+        robot -d results Supernatural/NomePBI1
+
+    - name: Archive Robot Framework results
+      if: ${{ always() }}
+      uses: actions/upload-artifact@v3
+      with:
+        name: robot-results
+        path: ./results
