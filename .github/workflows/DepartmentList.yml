@@ -22,14 +22,12 @@ jobs:
         pip install robotframework
         pip install robotframework-requests
         pip install robotframework-seleniumlibrary
-
     - name: Run Robot Framework tests API Department List
       run: |
         robot -d results Supernatural/Department-List
-
     - name: Archive Robot Framework results
       if: ${{ always() }}
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: robot-results
         path: ./results
