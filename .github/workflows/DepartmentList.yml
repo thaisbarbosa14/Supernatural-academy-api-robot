@@ -1,4 +1,4 @@
-name: Robot Framework Tests API - Department List
+name: Department List
 
 on: push
 
@@ -11,6 +11,9 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
+      with:
+        # Atualizar para Node.js 20
+        node-version: '20'
 
     - name: Set up Python
       uses: actions/setup-python@v2
