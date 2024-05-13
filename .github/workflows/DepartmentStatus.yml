@@ -1,19 +1,19 @@
-name: Robot Framework Tests API - Department List
+name: Robot Framework Tests API - Department Status
 
 on: push
 
 jobs:
     
   test:
-    name: Department List
+    name: Department Status
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: '3.x'
 
@@ -25,11 +25,11 @@ jobs:
 
     - name: Run Robot Framework tests API Department List
       run: |
-        robot -d results Supernatural/Department-List
+        robot -d results Supernatural/Department-Status
 
     - name: Archive Robot Framework results
       if: ${{ always() }}
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: robot-results
-        path: ./results
+        path: ./
