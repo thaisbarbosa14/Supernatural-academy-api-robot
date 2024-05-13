@@ -1,11 +1,11 @@
-name: Department Status
+name: Department-Status
 
 on: push
 
 jobs: 
   
   test:
-    name: DepartmentStatus
+    name: Department-Status
     runs-on: windows-latest
 
     steps:
@@ -21,6 +21,7 @@ jobs:
         # run: echo Instalação das depedências do Projeto
         run: |
           pip install robotframework
+          pip install robotframework-seleniumlibrary
           pip install robotframework-requests
  
       - name: rodando os testes
