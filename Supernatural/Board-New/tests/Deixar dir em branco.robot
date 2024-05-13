@@ -1,6 +1,6 @@
 *** Settings ***
 
-Resource    ../resources/web/frontend_cgehlen.resource
+Resource    ../resources/frontend.resource
 
 *** Test Cases ***
 Cenário 8: Deixar campo nome diretoria em branco e Salvar

@@ -1,6 +1,6 @@
 *** Settings ***
 
-Resource    ../resources/web/frontend_cgehlen.resource
+Resource    ../resources/frontend.resource
 
 *** Test Cases ***
 Cenário 4: Incluir nova Diretoria como nome contendo 51 caracteres e Salvar
